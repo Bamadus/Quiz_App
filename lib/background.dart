@@ -25,7 +25,12 @@ class _backgroundState extends State<Background>{
                 const OutlinedButton(
                     onPressed: button,
                     child:
-                    Text("Press Me!!")
+                    Text("Press Me!!",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                      )
+                    )
                 )
               ],
             )
