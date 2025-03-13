@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
 
 class Background extends StatefulWidget{
-  const Background(void Function() startQuiz,{super.key});
+  const Background(this.startQuiz,{super.key});
 
+  final void Function() startQuiz;
   @override
   State<Background> createState(){
     return _backGroundState();
   }
 
 }
-void button()=> "The button works";
+// void button()=> "The button works";
 class _backGroundState extends State<Background>{
   @override
+  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
+}
+  @override
   Widget build(context) {
+        var startQuiz;
         return Center(
           child:Column(
               mainAxisSize: MainAxisSize.min,
@@ -34,7 +39,8 @@ class _backGroundState extends State<Background>{
                 ),),
                 const SizedBox(height:9),
                  OutlinedButton.icon(
-                    onPressed: button,      //we can pass an anonymous function to the "onpressed" argument...like this (){}
+                    onPressed: startQuiz,
+                     //we can pass an anonymous function to the "onpressed" argument...like this (){}
                     style: OutlinedButton.styleFrom(
                       foregroundColor: Colors.white,
                     ),
@@ -55,6 +61,3 @@ class _backGroundState extends State<Background>{
             )
         );
   }
-
-
-}
