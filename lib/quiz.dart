@@ -13,7 +13,13 @@ class Quiz extends StatefulWidget{
 }
 class _QuizState extends State<Quiz>{
 
-  Widget activeScreen= Background(switchScreen);
+  Widget? activeScreen;
+
+  @override
+  void initState() {
+    super.initState();
+    activeScreen= Background(switchScreen);
+  }
 
   void switchScreen(){
     setState(() {
