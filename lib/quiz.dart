@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/background.dart';
+import 'package:untitled/startScreen.dart';
 import 'package:untitled/quest.dart';
 
 
@@ -17,10 +17,9 @@ class _QuizState extends State<Quiz>{
 
   @override
   void initState() {
-    super.initState();
     activeScreen= Background(switchScreen);
+    super.initState();
   }
-
   void switchScreen(){
     setState(() {
       activeScreen = const Quest();
