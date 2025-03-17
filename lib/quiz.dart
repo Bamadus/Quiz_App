@@ -43,9 +43,9 @@ class _QuizState extends State<Quiz>{
                 end: Alignment.bottomCenter,
               ),
             ),
-            child: activeScreen == startScreen
-                ? activeScreen= Background(switchScreen)
-                : const Quest,
+            child: activeScreen == 'startScreen'
+                ? Background(switchScreen)
+                : const Quest(),
           )
       ),
     );
