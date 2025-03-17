@@ -46,6 +46,9 @@ class _QuizState extends State<Quiz>{
             child: activeScreen == 'startScreen'
                 ? Background(switchScreen)
                 : const Quest(),
+            //we could has well pass all the tenary operation
+            // manipulations to a variable and just pass the variable to child
+
           )
       ),
     );

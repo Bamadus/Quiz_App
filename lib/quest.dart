@@ -11,13 +11,14 @@ class Quest extends StatefulWidget{
   }
 }
 
+String Questions = "Questions!!";
 class _QuestState extends State<Quest> {
 
   @override
   Widget build(content) {
     return const Center(
       child: Column(
-        //  const Text('Questions')
+          //Questions
       ),
     );
   }
