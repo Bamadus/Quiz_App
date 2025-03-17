@@ -15,12 +15,10 @@ class _QuestState extends State<Quest> {
 
   @override
   Widget build(content) {
-    return Center(
-        child:Column(
-            const Text(
-                "Questions for you??"
-            )
-        )
+    return const Center(
+      child: Column(
+        //  const Text('Questions')
+      ),
     );
   }
 }

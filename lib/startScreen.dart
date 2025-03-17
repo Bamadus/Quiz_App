@@ -27,7 +27,8 @@ class Background extends StatelessWidget {
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 18,
-              ),),
+              ),
+            ),
             const SizedBox(height: 9),
             OutlinedButton.icon(
                 onPressed:startQuiz,
