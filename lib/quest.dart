@@ -11,15 +11,31 @@ class Quest extends StatefulWidget{
   }
 }
 
-String Questions = "Questions!!";
+String questions = "Questions!!";
 class _QuestState extends State<Quest> {
 
   @override
   Widget build(content) {
-    return const Center(
-      child: Column(
-          //Questions
+    return Column(children: [
+        const Text("The questions..."),
+        const SizedBox(height: 29,),
+        ElevatedButton(onPressed:
+            (){},
+            child:const Text("answer 1")
+        ),
+      ElevatedButton(onPressed:
+          (){},
+          child:const Text("answer 2")
       ),
+      ElevatedButton(onPressed:
+          (){},
+          child:const Text("answer 3")
+      ),
+      ElevatedButton(onPressed:
+          (){},
+          child:const Text("answer 4")
+      )
+      ],
     );
   }
 }

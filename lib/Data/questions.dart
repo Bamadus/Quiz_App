@@ -26,5 +26,11 @@ const questions = [
     'Dinitrogen trioxide',
     'Nitrogen Teraoxide',
     'Tetradinitrogen dioxide'
+  ]),
+  QuizQuest("What is the bigesst planet in space??",
+  ['Jupiter',
+  'Mars',
+  'Earth',
+  'Uranus'
   ])
 ];
