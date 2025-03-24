@@ -22,43 +22,38 @@ class _QuestState extends State<Quest> {
       width: double.infinity,
         //Wrapping the whole code in a sizedBox is to use a special dart widget
         // to make the code take up or use as much space the screen as to provide...
+      child: Container(
+        //margin: EdgeInsets.all(1),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center, // this is to center the widgets on the screen
-          children: [
-            Center(
+            mainAxisAlignment: MainAxisAlignment.center,
+            //crossAxisAlignment: CrossAxisAlignment.stretch,
+            // this is to center the widgets on the screen
+            //the mainAxis is for vertical spacing, while CrossAxis is for horizontal spacing!!
+            children: [
+              Center(
                 child:Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 0,horizontal:45),
+                  padding: const EdgeInsets.symmetric(vertical: 0,horizontal:0),
                   child: Text(
-                            currentQuest.quests,
-                            style: const TextStyle(
-                              color: Colors.white60,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                              fontStyle: FontStyle.italic,
-                            ),
-                            ),
+                    currentQuest.quests,
+                    style: const TextStyle(
+                      color: Colors.white60,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.italic,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
-            ),
-          const SizedBox(height: 29,),
-      //ansText and pressed are named arguments in the ans_buttons module
-          AnsButton(
-            ansText: currentQuest.answers[0],
-            pressed: (){},
-          ),
-            AnsButton(
-              ansText: currentQuest.answers[1],
-              pressed: (){},
-            ),
-            AnsButton(
-              ansText: currentQuest.answers[2],
-              pressed: (){},
-            ),
-            AnsButton(
-              ansText: currentQuest.answers[3],
-              pressed: (){},
-            )
+              ),
+              const SizedBox(height: 29,),
+              // the comments used below is to spread the ansButton or to exstract the answers from the list of answers
+              ...currentQuest.getshuffledanswer().map((answer){
+                return AnsButton(ansText: answer,onPressed: (){},);
+              })
+              //ansText and pressed are named arguments in the ans_buttons module
             ]
         ),
+      )
         );
   }
 }
