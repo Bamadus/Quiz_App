@@ -15,7 +15,14 @@ class AnsButton extends StatelessWidget{
     return ElevatedButton(
         onPressed:pressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.purple
+          padding: const EdgeInsets.symmetric(
+              vertical: 9, horizontal: 19
+          ),
+          backgroundColor: Colors.purple,
+          // the shape widget is to shape the elevated button in a certain way.
+          // shape:RoundedRectangleBorder(
+          //   borderRadius: BorderRadius.circular(8),
+          // ),
         ),
         child: Text(ansText,
           style: const TextStyle(
