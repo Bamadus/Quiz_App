@@ -14,10 +14,15 @@ class Quest extends StatefulWidget{
 //String questions = "Questions!!";
 
 class _QuestState extends State<Quest> {
-
+  var currentQuestIndex = 0;
+  void answerQuest(){
+    setState(() {
+      currentQuestIndex++;
+    });
+  }
   @override
   Widget build(content) {
-    final currentQuest = questions[0];
+    final currentQuest = questions[currentQuestIndex];
     return SizedBox(
       width: double.infinity,
         //Wrapping the whole code in a sizedBox is to use a special dart widget
@@ -48,7 +53,7 @@ class _QuestState extends State<Quest> {
               const SizedBox(height: 29,),
               // the comments used below is to spread the ansButton or to exstract the answers from the list of answers
               ...currentQuest.getshuffledanswer().map((answer){
-                return AnsButton(ansText: answer,onPressed: (){},);
+                return AnsButton(ansText: answer,onPressed: answerQuest,);
               })
               //ansText and pressed are named arguments in the ans_buttons module
             ]

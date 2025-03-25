@@ -32,5 +32,40 @@ const questions = [
   'Mars',
   'Earth',
   'Uranus'
-  ])
+  ]),
+  QuizQuest(" Which animal is known as the \"King of the Jungle\"?",
+      [
+        'Lion',
+        'Tiger',
+        'Elephant',
+        'whale'
+      ]),
+  QuizQuest("How many continents are there on Earth?",
+      [
+        '7',
+        '8',
+        '12',
+        '9'
+      ]),
+  QuizQuest("Which planet is known as the Red Planet?",
+      [
+        'Mars',
+        'Mecury',
+        'Pluto',
+        'Venus'
+      ]),
+  QuizQuest("What is the largest ocean on Earth?",
+      [
+        'Pacific Ocean',
+        'Atlantic Ocean',
+        'Red Sea Ocean',
+        'Only God Knows :('
+      ]),
+  QuizQuest(" How many colors are there in a rainbow?",
+      [
+        '7',
+        '12',
+        '14',
+        '1O'
+      ])
 ];
