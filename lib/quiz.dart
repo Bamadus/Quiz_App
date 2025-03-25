@@ -20,12 +20,17 @@ class _QuizState extends State<Quiz>{
   //   activeScreen= Background(switchScreen);
   //   super.initState();
   // }
+  final List<String> selectedAns=[];
 
   var activeScreen = "startScreen";
   void switchScreen(){
     setState(() {
       activeScreen = "Quest";
     });
+  }
+
+  void chosenAns(String ans){
+    selectedAns.add(answers);
   }
   @override
   Widget build(context){
