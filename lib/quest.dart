@@ -3,8 +3,9 @@ import 'package:untitled/ans_buttons.dart';
 import 'package:untitled/Data/questions.dart';
 
 class Quest extends StatefulWidget{
-  const Quest({super.key});
+   const Quest({required this.onChosenAns,super.key});
 
+  final void Function(String answer) onChosenAns;
   @override
   State<Quest> createState() {
     return _QuestState();
@@ -15,7 +16,8 @@ class Quest extends StatefulWidget{
 
 class _QuestState extends State<Quest> {
   var currentQuestIndex = 0;
-  void answerQuest(){
+  void answerQuest(String chosans){
+    widget.onChosenAns(chosans);
     setState(() {
       currentQuestIndex++;
     });
@@ -53,7 +55,10 @@ class _QuestState extends State<Quest> {
               const SizedBox(height: 29,),
               // the comments used below is to spread the ansButton or to exstract the answers from the list of answers
               ...currentQuest.getshuffledanswer().map((answer){
-                return AnsButton(ansText: answer,onPressed: answerQuest,);
+                return AnsButton(ansText: answer,
+                  onPressed: (){
+                  answerQuest(answer);
+                },);
               })
               //ansText and pressed are named arguments in the ans_buttons module
             ]

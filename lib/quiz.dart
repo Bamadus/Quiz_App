@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/startScreen.dart';
 import 'package:untitled/quest.dart';
+import 'package:untitled/Data/questions.dart';
 
 
 class Quiz extends StatefulWidget{
@@ -20,7 +21,7 @@ class _QuizState extends State<Quiz>{
   //   activeScreen= Background(switchScreen);
   //   super.initState();
   // }
-  final List<String> selectedAns=[];
+  List<String> selectedAns =[];
 
   var activeScreen = "startScreen";
   void switchScreen(){
@@ -30,7 +31,14 @@ class _QuizState extends State<Quiz>{
   }
 
   void chosenAns(String ans){
-    selectedAns.add(answers);
+    selectedAns.add(ans);
+
+    if(selectedAns.length == questions.length){
+      setState(() {
+        //selectedAns = [];
+        activeScreen= 'startScreen';
+      });
+    }
   }
   @override
   Widget build(context){
@@ -50,7 +58,7 @@ class _QuizState extends State<Quiz>{
             ),
             child: activeScreen == 'startScreen'
                 ? Background(switchScreen)
-                : const Quest(),
+                : Quest(onChosenAns:chosenAns),
             //we could has well pass all the tenary operation
             // manipulations to a variable and just pass the variable to child
 
